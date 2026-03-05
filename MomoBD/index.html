@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family: 'Segoe UI', sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* Landing Section */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+opacity:0.9;
+margin-bottom:40px;
+}
+
+button{
+padding:15px 40px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.hidden{
+display:none;
+}
+
+/* Reasons Section */
+
+#reasons-section{
+padding:60px 20px;
+}
+
+#reasons-section h2{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.reasons-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
+
+.reason{
+background:rgba(255,255,255,0.2);
+padding:20px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+font-size:16px;
+transition:0.3s;
+}
+
+.reason:hover{
+transform:scale(1.1);
+background:rgba(255,255,255,0.35);
+}
+
+/* Message */
+
+.message{
+margin-top:70px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+font-size:18px;
+line-height:1.7;
+background:rgba(255,255,255,0.15);
+padding:30px;
+border-radius:15px;
+}
+.back-btn{
+position:absolute;
+top:30px;
+left:30px;
+font-size:22px;
+cursor:pointer;
+background:rgba(255,255,255,0.2);
+padding:10px 18px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:rgba(255,255,255,0.4);
+}
+/* Floating hearts */
+
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+100%{transform:translateY(-110vh)}
+}
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:900px;
+margin:auto;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+#gallery-section{
+padding:60px 20px;
+}
+
+audio{
+margin-top:40px;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  #reasons-section h2 {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  /* Stack cards vertically, full width */
+  .reasons-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 16px;
+    max-width: 100%;
+  }
+
+  .reason {
+    width: 100% !important;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding: 14px 18px;
+    text-align: left;
+    border-radius: 12px;
+    margin: 0 !important;
+  }
+
+  /* Disable scale hover on touch devices to avoid sticky state */
+  .reason:hover {
+    transform: none;
+  }
+
+  .message {
+    font-size: 15px;
+    padding: 20px 16px;
+    margin-top: 40px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+
+  .back-btn {
+    font-size: 16px;
+    padding: 8px 14px;
+    top: 16px;
+    left: 16px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 13px 32px;
+  }
+
+}
+#thank-section{
+padding:80px 20px;
+text-align:center;
+}
+
+.thank-card{
+max-width:500px;
+margin:auto;
+background:rgba(255,255,255,0.2);
+padding:35px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.thank-card p{
+line-height:1.7;
+font-size:17px;
+}
+
+.thank-img{
+width:150px;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Happy Birthday 🎉</h1>
+
+<p>
+Today is a special day because someone very special was born.  
+I just want you to know that you mean a lot to me and I'm really grateful to have you in my life.  
+
+You deserve happiness, success, laughter, and all the beautiful things life can give.  
+I hope this little surprise makes you smile today.
+</p>
+
+<p>
+So before you continue…  
+there's something I want to show you.
+</p>
+
+<button onclick="openSurprise()">Open Your Surprise ❤️</button>
+</div>
+
+<section id="reasons-section" class="hidden">
+<div class="back-btn" onclick="goBack()">← Back</div>
+<h2>25 Little Things I Adore About You</h2>
+
+<div class="reasons-container">
+
+<div class="reason">1. The way you listen to me</div>
+<div class="reason">2. Your smile that makes everything better</div>
+<div class="reason">3. How you make ordinary moments special</div>
+<div class="reason">4. Your kindness toward everyone</div>
+<div class="reason">5. Your sense of humor</div>
+<div class="reason">6. The way your presence makes everything feel a little better</div>
+<div class="reason">7. You always motivate me</div>
+<div class="reason">8. I feel safe talking to you</div>
+<div class="reason">9. Your honesty</div>
+<div class="reason">10. Your calm personality</div>
+<div class="reason">11. The way you make me laugh</div>
+<div class="reason">12. Your caring nature</div>
+<div class="reason">13. You inspire me</div>
+<div class="reason">14. Your confidence</div>
+<div class="reason">15. The comfort I feel around you</div>
+<div class="reason">16. The way you support me</div>
+<div class="reason">17. Your loyalty</div>
+<div class="reason">18. Your intelligence</div>
+<div class="reason">19. The way you encourage me</div>
+<div class="reason">20. Your positivity</div>
+<div class="reason">21. Your thoughtful nature</div>
+<div class="reason">22. The memories we share</div>
+<div class="reason">23. The way you brighten my day</div>
+<div class="reason">24. The way my mood instantly changes when I talk to you</div>
+<div class="reason">25. Simply because you are you ❤️</div>
+
+</div>
+
+<div class="message">
+
+<p>
+
+There are people we meet in life who just pass by…  
+and then there are people who quietly become important without us even realizing it.
+
+You became that person for me.
+
+Somewhere between our conversations, laughter, and random moments… you slowly became someone I genuinely care about.
+
+There is something about you that makes everything feel lighter.  
+Your presence, your words, even the way you make people smile.
+
+Sometimes I wonder if you realize how special you really are.
+
+Maybe you don't see it yet…  
+but you've become one of my favorite parts of life.
+
+And I'm really grateful that somehow, out of all the people in the world…
+
+I got you.
+
+❤️
+
+</p>
+
+</div>
+<button onclick="openGallery()">See Memories 📸</button>
+</section>
+<section id="gallery-section" class="hidden">
+
+<div class="back-btn" onclick="backToReasons()">← Back</div>
+
+<h2>See Memories 📸</h2>
+
+<div class="gallery">
+
+<img src="cutie.jpeg">
+<img src="BDBOY.jpeg">
+<img src="Innocent  me.jpeg">
+<img src="bk.jpeg">
+<img src="slap.jpeg">
+<img src="cake.jpeg">
+<img src="bd.jpeg">
+
+
+
+</div>
+
+<audio id="song" autoplay loop>
+<source src="nastelbom-happy-birthday-469282.mp3" type="audio/mpeg">
+</audio>
+<button class="next-btn" onclick="openThank()">Next ❤️</button>
+</section>
+<section id="thank-section" class="hidden">
+
+<div class="back-btn" onclick="backToGallery()">← Back</div>
+
+<h2>Thank You ❤️</h2>
+
+<div class="thank-card">
+
+<img src="tq.jpeg" class="thank-img">
+
+<p>
+Thank you for taking the time to go through this little surprise.  
+I just wanted to make your day a little more special.
+
+Every photo and every word here was made with love.
+
+Once again, wishing you a very happy birthday.
+</p>
+
+</div>
+
+</section>
+<script>
+
+function openSurprise(){
+
+document.querySelector(".hero").style.display="none";
+document.getElementById("reasons-section").classList.remove("hidden");
+
+startHearts();
+
+}
+
+function startHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000)
+
+},200)
+
+}
+function goBack(){
+
+document.querySelector(".hero").style.display="flex";
+document.getElementById("reasons-section").classList.add("hidden");
+
+}
+function openGallery(){
+
+document.getElementById("reasons-section").classList.add("hidden");
+document.getElementById("gallery-section").classList.remove("hidden");
+
+document.getElementById("song").play();
+
+}
+
+function backToReasons(){
+
+document.getElementById("gallery-section").classList.add("hidden");
+document.getElementById("reasons-section").classList.remove("hidden");
+
+}
+function openSurprise(){
+
+document.querySelector(".hero").style.display="none";
+document.getElementById("reasons-section").classList.remove("hidden");
+
+document.getElementById("song").play();
+
+startHearts();
+
+}
+function openThank(){
+
+document.getElementById("gallery-section").classList.add("hidden");
+document.getElementById("thank-section").classList.remove("hidden");
+
+}
+
+function backToGallery(){
+
+document.getElementById("thank-section").classList.add("hidden");
+document.getElementById("gallery-section").classList.remove("hidden");
+
+}
+</script>
+
+</body>
+</html> 
